@@ -15,10 +15,15 @@ export interface SceneLink {
 }
 
 export interface SceneStat {
-  value: number; // the number counted up to
-  prefix?: string; // e.g. "$"
-  suffix?: string; // e.g. "%" or "K"
+  value: number | string; // number = animated count-up; string (e.g. "$1B+") = static
+  prefix?: string; // e.g. "$" (count-up stats only)
+  suffix?: string; // e.g. "%" or "K" (count-up stats only)
   label: string; // the small caption under the number
+}
+
+export interface SceneQuote {
+  text: string; // VERBATIM. Never reword someone else's words.
+  who: string; // attribution, e.g. "David, Software Engineer"
 }
 
 export interface SceneImage {
@@ -39,11 +44,14 @@ export interface Scene {
   dark?: boolean; // true = light text on dark sky
   kicker: string; // the small caps line above the title
   title: [string, string]; // [regular part, italic part] of the heading
+  titleHtml?: string; // overrides title; allows placing <em> exactly (e.g. italic on one word)
   wall?: string; // the small-caps "wall label" under the title
-  body?: string; // the paragraph
+  body?: string | string[]; // one paragraph, or several; <b>...</b> allowed for emphasis
   links?: SceneLink[];
   stats?: SceneStat[];
   images?: SceneImage[];
+  quotes?: SceneQuote[]; // verbatim pull-quotes, rendered small italic serif
+  coda?: string; // one quiet closing line at the end of the scene
   spectrum?: SpectrumItem[]; // only used by the Full spectrum scene
 }
 
@@ -103,7 +111,18 @@ export const scenes: Scene[] = [
     kicker: "2024 to 2025 · Amazon, Amsterdam",
     title: ["Clair-", "obscur."],
     wall: "Price Perception · architecture · European Omnibus directive",
-    body: "At Amazon in Amsterdam I worked on Price Perception: how customers see prices. I designed the architecture for a new price-history experience, weighing real-time computation against pre-computed approaches. I helped expand the European Omnibus directive implementation to Spain and Ireland, ran A/B experiments to measure customer impact, and redesigned a core UI element to work across marketplaces and languages. I supervised an intern for five months, and I gave an internal conference talk on the Model Context Protocol.",
+    body: [
+      "At Amazon in Amsterdam I worked on Price Perception: how customers see prices. I designed the <b>architecture for a new price-history experience</b>, weighing real-time computation against pre-computed approaches.",
+      "I helped expand the <b>European Omnibus directive</b> implementation to Spain and Ireland, ran A/B experiments to measure customer impact, and redesigned a core UI element to work across marketplaces and languages.",
+      "I also <b>mentored an intern for five months</b>, and gave a conference talk, <b>The Hidden Power of MCP</b>, to 40+ engineers in Madrid.",
+    ],
+    stats: [
+      { value: "Millions €", label: "in potential EU fines avoided through price-compliance work" },
+      { value: 8, label: "marketplaces launched, zero post-launch critical incidents" },
+    ],
+    quotes: [
+      { text: "She's a GenAI champion on our team, suggesting knowledge-base integration, presenting MCP at the Women Conference, and piloting new tools while educating the team about their effectiveness.", who: "Peer feedback, annual review" },
+    ],
   },
   {
     id: "paris",
@@ -111,12 +130,32 @@ export const scenes: Scene[] = [
     kicker: "2026 to present · Amazon, Paris",
     title: ["Plein", "soleil."],
     wall: "Pricing systems · regional exit · centralized fee engine · AI agents",
-    body: "Back in Paris, on pricing systems. I delivered a migration workstream in a regional-exit program: four backend services moved off a legacy AWS region, one legacy data-warehouse cluster deprecated, one month ahead of target. I re-platformed fee computation onto a centralized fee engine and built reusable cross-region networking constructs, so later migrations become configuration changes. And I use AI coding agents to run migrations in parallel.",
+    body: [
+      "Back in Paris, on pricing systems. As part of a regional-exit program, I moved a backend service off a legacy AWS region with <b>zero downtime</b> and deprecated a legacy data-warehouse cluster, <b>one month ahead of target</b>.",
+      "I re-platformed fee computation onto a <b>centralized fee engine</b> and built reusable cross-region networking constructs, so later migrations become configuration changes.",
+      "I also brought <b>AI coding agents</b> into our migration work: running them in parallel, piloting new tools, and sharing with my team what actually works.",
+    ],
     stats: [
       { value: 82, suffix: "%", label: "region footprint cut, one month ahead of target" },
       { value: 48, prefix: "$", suffix: "K", label: "per year of infrastructure run-rate removed" },
       { value: 26, suffix: "%", label: "per-migration effort cut with AI agents" },
+      { value: "$1B+", label: "annual opportunity identified, 3rd place at the hackathon" },
     ],
+    quotes: [
+      { text: "She didn't just get the migration done quickly and smoothly with zero downtime, she refined our networking setup along the way, and it's been reused in other DARU migrations. She also organized a knowledge-sharing session so others could benefit.", who: "A teammate, Software Engineer" },
+    ],
+  },
+  {
+    id: "reflected",
+    sky: ["#dcae8e", "#c29275"],
+    kicker: "What others say · quoted as written",
+    title: ["Reflected", "light."],
+    quotes: [
+      { text: "This is the kind of backbone I like to see, backed with data, kind but firm. Well done!", who: "My Engineering Manager" },
+      { text: "Whether it's leading our Connections meetings or running mob programming sessions, Zoha consistently steps up for the team, and she does it all with a great attitude and care.", who: "A software engineer on my team" },
+      { text: "Big shout-out to Zoha for bringing steady, positive energy to the team, even in our most stressful moments!", who: "A teammate" },
+    ],
+    coda: "Team Cheerleader, two years running.",
   },
   {
     id: "spectrum",
@@ -127,11 +166,11 @@ export const scenes: Scene[] = [
     body: "My path wasn't a straight line. Each stop added a different skill, and I kept all of them.",
     spectrum: [
       { color: "#f2d9a8", title: "Backend & Cloud", body: "Java, Python, AWS CDK, Lambda, DynamoDB. Pricing systems that serve real marketplaces." },
-      { color: "#c99a5b", title: "AI & Agents", body: "AI coding agents in production migration work. A conference talk on the Model Context Protocol." },
+      { color: "#c99a5b", title: "AI & Agents", body: "Coding agents on production migrations, conference talks on MCP, piloting the tools my team adopts." },
       { color: "#aab3cd", title: "Fullstack & Mobile", body: "React Native, TypeScript, Angular, Supabase. Palette shipped to iOS and Android." },
       { color: "#c2cdd2", title: "Data", body: "SQL, Redshift, Tableau. A predictive retention model, automated reporting pipelines." },
       { color: "#8fb3c9", title: "Games & Graphics", body: "C#, Unity, A* pathfinding, procedural world generation. A shipped tactical RPG." },
-      { color: "#cfe3ee", title: "Business & Languages", body: "A business degree across three continents. French, English, Spanish, Urdu, Hindi." },
+      { color: "#cfe3ee", title: "Business & Languages", body: "A business degree across three continents. French, English, Spanish, Urdu, Hindi, Gujarati." },
     ],
   },
   {
@@ -140,6 +179,7 @@ export const scenes: Scene[] = [
     dark: true,
     kicker: "2025 to present · nights and weekends",
     title: ["And in the evening,", "I build Palette."],
+    titleHtml: "And in the <em>evening,</em><br>I build Palette.",
     wall: "React Native · TypeScript · offline-first · museum APIs",
     body: "Palette is a free app to track, curate, and discover art across museums, from the Met to the Rijksmuseum. I build it on nights and weekends. It has its own site, and its own story.",
     images: [
@@ -164,7 +204,10 @@ export const scenes: Scene[] = [
     sky: ["#1a2030", "#12161f"],
     dark: true,
     kicker: "Right now · updated September 2026",
-    title: ["Currently", "researching."],
-    body: "Agentic development at scale, on real production migrations. Growing Palette museum by museum. And always the next hard problem.",
+    title: ["Before", "sunrise."],
+    body: [
+      "I'm exploring how far <b>AI agents</b> can go in real production engineering, and taking my team along for the ride.",
+      "Palette has <b>new museums</b> on the way. And somewhere in Paris, there's an exhibition I haven't seen yet.",
+    ],
   },
 ];
