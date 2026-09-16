@@ -28,6 +28,12 @@
         <a class="dl" href="/cv.pdf" download>Download PDF</a>
       </header>
 
+      <h2>About</h2>
+      <div class="entry">
+        <p class="about">My path into software engineering wasn't straightforward, but looking back, it was always pointing the same direction. I took a detour through business school and made it work: I took every data, technology, and CS-adjacent class I could find, and picked up the rest on my own. By my final year at UC Berkeley I was deliberately filling in every CS gap I could. An internship at Dataiku confirmed it, and I joined Amazon as a Software Development Engineer.</p>
+        <p class="about">I'm self-taught in most of what matters technically, and I think that shapes how I work. I adapt quickly, get comfortable with uncertainty, and tend to thrive when the problem doesn't have an obvious answer yet.</p>
+      </div>
+
       <h2>Experience</h2>
       <div class="entry">
         <div class="row">
@@ -46,11 +52,14 @@
           <span class="when">Amsterdam · May 2024 to Dec 2025</span>
         </div>
         <ul>
-          <li>Designed architecture for a new customer experience involving price history, evaluating tradeoffs between real-time computation and pre-computed approaches for latency</li>
-          <li>Contributed to the expansion of an existing feature implementing the European Omnibus directive in Spain and Ireland</li>
-          <li>Authored a Correction of Error on a compliance incident, driving root-cause analysis across systems and leading the mitigation</li>
-          <li>Launched feature experiments using A/B testing methodologies; redesigned a core UI element to scale across marketplaces and languages</li>
-          <li>Supervised a software engineering intern for 5 months; presented at an internal conference on the Model Context Protocol</li>
+          <li>Designed architecture for a new price-history customer experience, evaluating tradeoffs between real-time computation and pre-computed approaches for latency and scalability</li>
+          <li>Expanded the European Omnibus directive compliance feature to the Spanish market via an A/B experiment, owning the full launch lifecycle from design to post-launch analysis</li>
+          <li>Authored a post-mortem on a compliance incident, driving root-cause analysis across interconnected systems and mitigation items to resolution</li>
+          <li>Coordinated across three engineering teams and senior stakeholders to align on technical standards and surface experiment overlap, facilitating strategic project consolidation</li>
+          <li>Redesigned a core UI component of the price tracker to be scalable and reusable across marketplaces and languages; identified and documented latency-regression corrections</li>
+          <li>Mentored a software engineering intern for 5 months: technical mentorship, design reviews, and guidance on an internal operations dashboard</li>
+          <li>Presented at an internal conference in Madrid on the Model Context Protocol and its architectural implications for AI-integrated systems</li>
+          <li>Served as team happiness champion, owning the feedback survey cycle end to end; maintained on-call responsibilities for production systems</li>
         </ul>
       </div>
       <div class="entry">
@@ -65,11 +74,22 @@
       </div>
       <div class="entry">
         <div class="row">
-          <span class="role">Data Analyst Intern <span class="org">· Dashlane / Spark.do</span></span>
-          <span class="when">Paris · Jul 2021 to Jun 2022</span>
+          <span class="role">Data Analyst Intern <span class="org">· Dashlane</span></span>
+          <span class="when">Paris · Jan 2022 to Jun 2022</span>
         </div>
         <ul>
-          <li>Data analysis, modeling, and visualization with Tableau, SQL Server, and Amazon Redshift; built a predictive model for user retention; automated weekly reports with Metabase and Airtable APIs, cutting preparation time 50%</li>
+          <li>Data analysis and visualization with Tableau, SQL Server, and Amazon Redshift; developed a model to predict user retention and guide the sales team</li>
+          <li>Analyzed the account-creation flow to detect drop-off points and the sales and trial engagement touchpoints to explain performance changes; built a data model tracking daily trial-customer evolution</li>
+          <li>Owned QA of several data models, cross-checking Salesforce against backoffice data</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="role">Data Analyst Intern <span class="org">· Spark.do</span></span>
+          <span class="when">Paris · Jul 2021 to Dec 2021</span>
+        </div>
+        <ul>
+          <li>Data analysis and reporting with Metabase and PostgreSQL; maintained and debugged reportings and the data pipeline; automated weekly reports with Metabase and Airtable APIs, cutting preparation time 50%</li>
         </ul>
       </div>
 
@@ -112,9 +132,19 @@
         </ul>
       </div>
       <div class="entry">
+        <div class="row"><span class="role">Université de Franche-Comté — CS licence audit, remote</span><span class="when">2021 to 2022</span></div>
+        <ul><li>Audited a computer science licence by distance learning, alongside business school, to fill CS fundamentals deliberately</li></ul>
+      </div>
+      <div class="entry">
         <div class="row"><span class="role">Lycée Saint-Louis — CPGE MPSI/MP</span><span class="when">2017 to 2019</span></div>
         <ul><li>Intensive preparatory classes: mathematics, physics, chemistry, computer science</li></ul>
       </div>
+
+      <h2>Certifications &amp; Volunteering</h2>
+      <dl class="skills">
+        <dt>Certifications</dt><dd>Dataiku Core Designer · Financial Accounting (online course) · Web Development (HTML5 &amp; CSS3)</dd>
+        <dt>Volunteering</dt><dd>Milano Cortina 2026 Olympic Winter Games — volunteer</dd>
+      </dl>
 
       <h2>Skills</h2>
       <dl class="skills">
@@ -162,6 +192,7 @@
     color: #8a6d3d; margin: 2.6rem 0 1.1rem; padding-bottom: .45rem; border-bottom: 1px solid #ddd5c5;
   }
   .entry { margin-bottom: 1.35rem; }
+  .about { font-size: .95rem; max-width: 40rem; margin-bottom: .7rem; color: #2e2a24; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
   .role { font-weight: 600; font-size: 1.02rem; }
   .org { font-weight: 400; color: #5b564d; }
