@@ -26,7 +26,15 @@
           Paris, France
         </div>
         <a class="dl" href="/cv.pdf" download>Download PDF</a>
+        <div class="pdfnote">The PDF is the one-page version. This page carries more detail.</div>
       </header>
+
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Programming</dt><dd>Python · Java · TypeScript · JavaScript · SQL · React Native · Angular · C#</dd>
+        <dt>Cloud &amp; DevOps</dt><dd>AWS (CDK, Lambda, DynamoDB, S3, CloudWatch) · Docker · CI/CD · Git · Infrastructure as code</dd>
+        <dt>Languages</dt><dd>French · English · Spanish · Urdu · Hindi · Gujarati</dd>
+      </dl>
 
       <h2>Experience</h2>
       <div class="entry">
@@ -35,9 +43,9 @@
           <span class="when">Paris · Jan 2026 to present</span>
         </div>
         <ul>
-          <li>Delivered a migration workstream within the 2026 regional-exit program for pricing services (4 backend services moved off a legacy AWS region, one legacy data-warehouse cluster deprecated), cutting the region footprint 82% and infrastructure run-rate by about $48K/year, one month ahead of target</li>
-          <li>Re-platformed fee computation onto a new centralized fee engine and built reusable cross-region networking constructs, reducing later migrations to configuration changes</li>
-          <li>Used AI coding agents with earlier migrations as context to run migrations in parallel, cutting per-migration effort about 26%</li>
+          <li>Delivered a migration workstream within the 2026 regional-exit program for pricing services: moved a backend service off a legacy AWS region with <b>zero downtime</b> and deprecated a legacy data-warehouse cluster, contributing to an <b>82% region-footprint cut</b> and about <b>$48K/year</b> of run-rate reduction, <b>one month ahead of target</b></li>
+          <li>Re-platformed fee computation onto a new <b>centralized fee engine</b> and built reusable cross-region networking constructs, reducing later migrations to configuration changes</li>
+          <li>Brought <b>AI coding agents</b> into the migration work, using earlier migrations as context to run migrations in parallel and cutting per-migration effort about <b>26%</b></li>
         </ul>
       </div>
       <div class="entry">
@@ -46,11 +54,14 @@
           <span class="when">Amsterdam · May 2024 to Dec 2025</span>
         </div>
         <ul>
-          <li>Designed architecture for a new customer experience involving price history, evaluating tradeoffs between real-time computation and pre-computed approaches for latency</li>
-          <li>Contributed to the expansion of an existing feature implementing the European Omnibus directive in Spain and Ireland</li>
-          <li>Authored a Correction of Error on a compliance incident, driving root-cause analysis across systems and leading the mitigation</li>
-          <li>Launched feature experiments using A/B testing methodologies; redesigned a core UI element to scale across marketplaces and languages</li>
-          <li>Supervised a software engineering intern for 5 months; presented at an internal conference on the Model Context Protocol</li>
+          <li>Designed <b>architecture for a new price-history customer experience</b>, evaluating tradeoffs between real-time computation and pre-computed approaches for latency and scalability</li>
+          <li>Expanded the <b>European Omnibus directive</b> compliance feature to the Spanish market via an A/B experiment, owning the full launch lifecycle from design to post-launch analysis</li>
+          <li>Authored a <b>post-mortem</b> on a compliance incident, driving root-cause analysis across interconnected systems and mitigation items to resolution</li>
+          <li>Coordinated across <b>three engineering teams</b> and senior stakeholders to align on technical standards and surface experiment overlap, facilitating strategic project consolidation</li>
+          <li>Redesigned a core UI component of the price tracker to be <b>scalable and reusable</b> across marketplaces and languages; identified and documented latency-regression corrections</li>
+          <li><b>Mentored a software engineering intern</b> for 5 months: technical mentorship, design reviews, and guidance on an internal operations dashboard</li>
+          <li>Presented at an internal conference in Madrid on the <b>Model Context Protocol</b> and its architectural implications for AI-integrated systems</li>
+          <li>Served as <b>team happiness champion</b>, owning the feedback survey cycle end to end; maintained on-call responsibilities for production systems</li>
         </ul>
       </div>
       <div class="entry">
@@ -59,17 +70,32 @@
           <span class="when">Paris · Jul 2023 to Dec 2023</span>
         </div>
         <ul>
-          <li>Developed a 1900-line feature generating and displaying foreign-key relation graphs between tables: JDBC indexing, Graphviz rendering and ElasticSearch retrieval, an Angular modal component to navigate the result</li>
+          <li>Developed a <b>1900-line feature</b> generating and displaying foreign-key relation graphs between tables: primary and foreign keys indexed via JDBC into ElasticSearch, the graph generated through Graphviz, and the SVG made interactive with Angular and TypeScript</li>
+          <li>Built the exploration experience end to end: <b>mass import</b> of selected tables, <b>expand and collapse</b> of relations to different degrees, previews of external table content, zoom and pan navigation, informational tooltips, clustering of tables into schema zones, <b>state persistence</b> across sessions, and highlighting of connected columns on hover</li>
         </ul>
         <div class="refs"><a href="https://youtu.be/55iVW6ja0eQ">Video demo</a></div>
       </div>
       <div class="entry">
         <div class="row">
-          <span class="role">Data Analyst Intern <span class="org">· Dashlane / Spark.do</span></span>
-          <span class="when">Paris · Jul 2021 to Jun 2022</span>
+          <span class="role">Data Analyst Intern <span class="org">· Dashlane</span></span>
+          <span class="when">Paris · Jan 2022 to Jun 2022</span>
         </div>
         <ul>
-          <li>Data analysis, modeling, and visualization with Tableau, SQL Server, and Amazon Redshift; built a predictive model for user retention; automated weekly reports with Metabase and Airtable APIs, cutting preparation time 50%</li>
+          <li>Data analysis and visualization with <b>Tableau, SQL Server, and Amazon Redshift</b>; communicated insights and possible actions to stakeholders</li>
+          <li>Developed a <b>model to predict user retention</b> and guide the sales team, and a data model tracking the daily evolution of customers in trial</li>
+          <li>Analyzed the account-creation flow in a New Product Introduction context to detect drop-off points, and the sales and trial engagement touchpoints to explain month-over-month performance changes</li>
+          <li>Owned <b>QA of several data models</b>, cross-checking Salesforce against backoffice data and improving the matching</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="role">Data Analyst Intern <span class="org">· Spark.do</span></span>
+          <span class="when">Paris · Jul 2021 to Dec 2021</span>
+        </div>
+        <ul>
+          <li>Data analysis and reporting with <b>Metabase and PostgreSQL</b>: query redaction on request, maintenance and debugging of reportings, and improvement of the <b>data pipeline</b></li>
+          <li>Contributed to roadmap projects and internal processes such as trainings; automated weekly reports with Metabase and Airtable APIs, <b>cutting preparation time 50%</b></li>
+          <li>Tools: Metabase, PostgreSQL, Python, JavaScript, Pipedream, Airtable</li>
         </ul>
       </div>
 
@@ -77,21 +103,19 @@
       <div class="entry">
         <div class="row"><span class="role">Palette — cross-platform mobile app</span><span class="when">2025 to present</span></div>
         <ul>
-          <li>iOS and Android app to search paintings across museum APIs (the Met, Rijksmuseum, Art Institute of Chicago, and more), curate a personal collection, and build a shareable palette of favorites</li>
-          <li>Offline-first with cloud sync: Supabase auth and Postgres, Zustand and MMKV, an offline operation queue with conflict resolution; full test suite in CI</li>
+          <li>iOS and Android app to <b>track, curate, and discover art across museums</b>: search real collections through <b>14 museum APIs</b> (the Met, Rijksmuseum, Art Institute of Chicago, Cleveland Museum of Art, V&amp;A, SMK, and more)</li>
+          <li>Curation model built around palettes: a <b>canon palette</b> of your all-time top 8 and a <b>palette per museum visit</b>, both exportable and shareable</li>
+          <li><b>Offline-first architecture</b> with cloud sync: Supabase auth and Postgres, Zustand and MMKV storage, and an offline operation queue with conflict resolution</li>
+          <li>Full <b>test suite running in CI</b> on GitHub Actions; public site with a journal</li>
         </ul>
-        <div class="refs">
-          <a href="https://zoha-rakotomalala.github.io/Mithra/">Site</a>
-          <a href="https://github.com/zoha-rakotomalala/Mithra">Repository</a>
-        </div>
+        <div class="refs"><a href="https://zoha-rakotomalala.github.io/Mithra/">Site</a>
+          <a href="https://github.com/zoha-rakotomalala/Mithra">Repository</a></div>
       </div>
       <div class="entry">
         <div class="row"><span class="role">Mercury's Rise — 2D tactical RPG (C# / Unity)</span><span class="when">2023</span></div>
-        <ul><li>Led a cross-functional team of artists and developers; implemented A* enemy AI and a full turn-based action system</li></ul>
-        <div class="refs">
-          <a href="https://zoharak.itch.io/mercurys-rise">itch.io</a>
-          <a href="https://youtu.be/XkSQvnWV3vE">Trailer</a>
-        </div>
+        <ul><li>Led a cross-functional team of artists and developers; implemented <b>A* enemy AI</b> and a full turn-based action system</li></ul>
+        <div class="refs"><a href="https://zoharak.itch.io/mercurys-rise">itch.io</a>
+          <a href="https://youtu.be/XkSQvnWV3vE">Trailer</a></div>
       </div>
       <div class="entry">
         <div class="row"><span class="role">2D Procedural World Generation (Java)</span><span class="when">2022</span></div>
@@ -110,18 +134,29 @@
           <li>SKK GSB, Sungkyunkwan University, Seoul, Republic of Korea</li>
           <li>EDHEC Business School, Paris, France</li>
         </ul>
+        <div class="courses"><b>Relevant courses:</b> Data Analytics, Web Development, AI&amp;ML for Business, Cryptoeconomics and Blockchain Technologies, Data Structures, Genetic Data Automation, Introduction to C++ and Python, Data Science Applied to Finance</div>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="role">Université de Franche-Comté — CS licence audit, remote</span><span class="when">2021 to 2022</span></div>
+        <ul><li>Audited a computer science licence by distance learning, alongside business school, to fill CS fundamentals deliberately</li></ul>
       </div>
       <div class="entry">
         <div class="row"><span class="role">Lycée Saint-Louis — CPGE MPSI/MP</span><span class="when">2017 to 2019</span></div>
         <ul><li>Intensive preparatory classes: mathematics, physics, chemistry, computer science</li></ul>
       </div>
 
-      <h2>Skills</h2>
+      <h2>Certifications &amp; Volunteering</h2>
       <dl class="skills">
-        <dt>Programming</dt><dd>Python · Java · TypeScript · JavaScript · SQL · React Native · Angular · C#</dd>
-        <dt>Cloud &amp; DevOps</dt><dd>AWS (CDK, Lambda, DynamoDB, S3, CloudWatch) · Docker · CI/CD · Git</dd>
-        <dt>Languages</dt><dd>French · English · Spanish · Urdu · Hindi</dd>
-        <dt>Interests</dt><dd>Museums and art history · reading across genres · RPGs and strategy games</dd>
+        <dt>Certifications</dt><dd>Dataiku Core Designer · Financial Accounting (online course) · Web Development (HTML5 &amp; CSS3)</dd>
+        <dt>Volunteering</dt><dd>Milano Cortina 2026 Olympic Winter Games — volunteer</dd>
+      </dl>
+
+      <h2>Interests</h2>
+      <dl class="skills">
+        <dt>Technology</dt><dd>Discovering new technologies, especially AI; coding and learning new techniques for fun</dd>
+        <dt>Reading</dt><dd>Across genres: fantasy, science fiction, dystopias, non-fiction, and sociology</dd>
+        <dt>Art</dt><dd>Museums, art history, and paintings</dd>
+        <dt>Video Games</dt><dd>RPGs and strategy games</dd>
       </dl>
     </div>
   </body>
@@ -156,6 +191,7 @@
     letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
   }
   .dl:hover { background: #1d1b18; color: #f4efe6; }
+  .pdfnote { margin-top: .5rem; font-size: .78rem; color: #8a8375; font-style: italic; }
 
   h2 {
     font-weight: 400; font-size: .78rem; letter-spacing: .32em; text-transform: uppercase;
@@ -169,15 +205,18 @@
   ul { list-style: none; margin-top: .45rem; }
   li { position: relative; padding-left: 1.05rem; margin-bottom: .3rem; font-size: .93rem; }
   li::before { content: "·"; position: absolute; left: .15rem; color: #8a6d3d; font-weight: 700; }
+  li b { font-weight: 600; }
   .refs { font-size: .83rem; margin-top: .35rem; }
   .refs a { margin-right: 1.1rem; border-bottom: 1px solid #cfc7b8; text-decoration: none; }
+  .courses { margin-top: .4rem; font-size: .85rem; color: #5b564d; }
+  .courses b { font-weight: 600; color: #1d1b18; }
   .skills { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1.2rem; }
   .skills dt { font-weight: 600; font-size: .9rem; }
   .skills dd { color: #5b564d; font-size: .9rem; }
 
   @media print {
     body { background: #fff; font-size: 10.5px; }
-    nav, .dl { display: none; }
+    nav, .dl, .pdfnote { display: none; }
     .wrap { padding: 0; max-width: none; }
     h2 { margin-top: 1.2rem; }
   }
