@@ -1,0 +1,79 @@
+---
+import type { Scene } from "../data/scenes";
+
+interface Props {
+  scene: Scene;
+}
+const { scene: s } = Astro.props;
+---
+
+<section class:list={["scene", { dark: s.dark }]} id={s.id} data-sky={s.sky.join(",")}>
+  <div class="inner">
+    <div class="kicker fx">{s.kicker}</div>
+    <h2 class="serif fx d1">{s.title[0]} <em>{s.title[1]}</em></h2>
+    {s.wall && <div class="wall fx d2">{s.wall}</div>}
+    {s.body && <p class="body fx d3">{s.body}</p>}
+
+    {
+      s.images && (
+        <div class="figures fx d3">
+          {s.images.map((img) => (
+            <figure>
+              <img src={img.src} alt={img.alt} loading="lazy" />
+              {img.caption && <figcaption>{img.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      s.stats && (
+        <div class="stats">
+          {s.stats.map((st, i) => (
+            <div class:list={["stat", "fx", `d${(i % 3) + 1}`]}>
+              <div
+                class="n serif"
+                data-count={st.value}
+                data-prefix={st.prefix}
+                data-suffix={st.suffix}
+              >
+                {st.prefix}0{st.suffix}
+              </div>
+              <div class="l">{st.label}</div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      s.spectrum && (
+        <>
+          <div class="spec">
+            {s.spectrum.map((d, i) => (
+              <div class:list={["dom", "fx", `d${(i % 2) + 1}`]} style={`--dc:${d.color}`}>
+                <h3>
+                  <span class="dot" />
+                  {d.title}
+                </h3>
+                <p>{d.body}</p>
+              </div>
+            ))}
+          </div>
+          <div class="specband fx d3" />
+        </>
+      )
+    }
+
+    {
+      s.links && (
+        <div class="links fx d3">
+          {s.links.map((l) => (
+            <a href={l.href}>{l.label}</a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,184 @@
+---
+// cv.astro — the CV page. Content is inline here on purpose: a CV is one
+// document, edited rarely and as a whole. The PDF lives at /public/cv.pdf.
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV — Zoha Rakotomalala</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">← Back to the site</a>
+      <a href="mailto:zoha.rakotomalala@gmail.com">zoha.rakotomalala@gmail.com</a>
+    </nav>
+
+    <div class="wrap">
+      <header>
+        <h1 class="serif">Zoha Rakotomalala</h1>
+        <div class="contact">
+          <a href="mailto:zoha.rakotomalala@gmail.com">zoha.rakotomalala@gmail.com</a><span>·</span>
+          <a href="https://github.com/zoha-rakotomalala">github.com/zoha-rakotomalala</a><span>·</span>
+          <a href="https://www.linkedin.com/in/ZohaRak">linkedin.com/in/ZohaRak</a><span>·</span>
+          Paris, France
+        </div>
+        <a class="dl" href="/cv.pdf" download>Download PDF</a>
+      </header>
+
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="row">
+          <span class="role">Software Development Engineer <span class="org">· Amazon</span></span>
+          <span class="when">Paris · Jan 2026 to present</span>
+        </div>
+        <ul>
+          <li>Delivered a migration workstream within the 2026 regional-exit program for pricing services (4 backend services moved off a legacy AWS region, one legacy data-warehouse cluster deprecated), cutting the region footprint 82% and infrastructure run-rate by about $48K/year, one month ahead of target</li>
+          <li>Re-platformed fee computation onto a new centralized fee engine and built reusable cross-region networking constructs, reducing later migrations to configuration changes</li>
+          <li>Used AI coding agents with earlier migrations as context to run migrations in parallel, cutting per-migration effort about 26%</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="role">Software Development Engineer <span class="org">· Amazon</span></span>
+          <span class="when">Amsterdam · May 2024 to Dec 2025</span>
+        </div>
+        <ul>
+          <li>Designed architecture for a new customer experience involving price history, evaluating tradeoffs between real-time computation and pre-computed approaches for latency</li>
+          <li>Contributed to the expansion of an existing feature implementing the European Omnibus directive in Spain and Ireland</li>
+          <li>Authored a Correction of Error on a compliance incident, driving root-cause analysis across systems and leading the mitigation</li>
+          <li>Launched feature experiments using A/B testing methodologies; redesigned a core UI element to scale across marketplaces and languages</li>
+          <li>Supervised a software engineering intern for 5 months; presented at an internal conference on the Model Context Protocol</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="role">Software Engineering Intern <span class="org">· Dataiku</span></span>
+          <span class="when">Paris · Jul 2023 to Dec 2023</span>
+        </div>
+        <ul>
+          <li>Developed a 1900-line feature generating and displaying foreign-key relation graphs between tables: JDBC indexing, Graphviz rendering and ElasticSearch retrieval, an Angular modal component to navigate the result</li>
+        </ul>
+        <div class="refs"><a href="https://youtu.be/55iVW6ja0eQ">Video demo</a></div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="role">Data Analyst Intern <span class="org">· Dashlane / Spark.do</span></span>
+          <span class="when">Paris · Jul 2021 to Jun 2022</span>
+        </div>
+        <ul>
+          <li>Data analysis, modeling, and visualization with Tableau, SQL Server, and Amazon Redshift; built a predictive model for user retention; automated weekly reports with Metabase and Airtable APIs, cutting preparation time 50%</li>
+        </ul>
+      </div>
+
+      <h2>Projects</h2>
+      <div class="entry">
+        <div class="row"><span class="role">Palette — cross-platform mobile app</span><span class="when">2025 to present</span></div>
+        <ul>
+          <li>iOS and Android app to search paintings across museum APIs (the Met, Rijksmuseum, Art Institute of Chicago, and more), curate a personal collection, and build a shareable palette of favorites</li>
+          <li>Offline-first with cloud sync: Supabase auth and Postgres, Zustand and MMKV, an offline operation queue with conflict resolution; full test suite in CI</li>
+        </ul>
+        <div class="refs">
+          <a href="https://zoha-rakotomalala.github.io/Mithra/">Site</a>
+          <a href="https://github.com/zoha-rakotomalala/Mithra">Repository</a>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="role">Mercury's Rise — 2D tactical RPG (C# / Unity)</span><span class="when">2023</span></div>
+        <ul><li>Led a cross-functional team of artists and developers; implemented A* enemy AI and a full turn-based action system</li></ul>
+        <div class="refs">
+          <a href="https://zoharak.itch.io/mercurys-rise">itch.io</a>
+          <a href="https://youtu.be/XkSQvnWV3vE">Trailer</a>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="role">2D Procedural World Generation (Java)</span><span class="when">2022</span></div>
+        <ul><li>Procedurally generated maps with rooms, hallways, and varied terrain; session serialization</li></ul>
+        <div class="refs"><a href="https://youtu.be/hIyjMor_EPE">Demo</a></div>
+      </div>
+
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="row">
+          <span class="role">Triple Degree — Global Economic Transformation &amp; Technology (GETT)</span>
+          <span class="when">2019 to 2023</span>
+        </div>
+        <ul>
+          <li>Haas School of Business, University of California, Berkeley, USA</li>
+          <li>SKK GSB, Sungkyunkwan University, Seoul, Republic of Korea</li>
+          <li>EDHEC Business School, Paris, France</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="role">Lycée Saint-Louis — CPGE MPSI/MP</span><span class="when">2017 to 2019</span></div>
+        <ul><li>Intensive preparatory classes: mathematics, physics, chemistry, computer science</li></ul>
+      </div>
+
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Programming</dt><dd>Python · Java · TypeScript · JavaScript · SQL · React Native · Angular · C#</dd>
+        <dt>Cloud &amp; DevOps</dt><dd>AWS (CDK, Lambda, DynamoDB, S3, CloudWatch) · Docker · CI/CD · Git</dd>
+        <dt>Languages</dt><dd>French · English · Spanish · Urdu · Hindi</dd>
+        <dt>Interests</dt><dd>Museums and art history · reading across genres · RPGs and strategy games</dd>
+      </dl>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(180deg, #f4efe6, #ece5d8); min-height: 100svh;
+    color: #1d1b18;
+    font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+    font-size: 16px; line-height: 1.55;
+  }
+  .serif { font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif; }
+  a { color: inherit; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.6rem; }
+  nav a {
+    font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+    text-decoration: none; border-bottom: 1px solid transparent;
+  }
+  nav a:hover { border-bottom-color: #1d1b18; }
+
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.6rem 4rem; }
+  header h1 { font-weight: 400; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.05; }
+  .contact { margin-top: .9rem; font-size: .88rem; color: #5b564d; }
+  .contact a { text-decoration: none; border-bottom: 1px solid #cfc7b8; }
+  .contact span { margin: 0 .45rem; color: #b9b0a0; }
+  .dl {
+    display: inline-block; margin-top: 1.3rem; padding: .6rem 1.25rem;
+    border: 1.5px solid #1d1b18; border-radius: 2rem; font-size: .82rem;
+    letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  }
+  .dl:hover { background: #1d1b18; color: #f4efe6; }
+
+  h2 {
+    font-weight: 400; font-size: .78rem; letter-spacing: .32em; text-transform: uppercase;
+    color: #8a6d3d; margin: 2.6rem 0 1.1rem; padding-bottom: .45rem; border-bottom: 1px solid #ddd5c5;
+  }
+  .entry { margin-bottom: 1.35rem; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .role { font-weight: 600; font-size: 1.02rem; }
+  .org { font-weight: 400; color: #5b564d; }
+  .when { font-size: .8rem; color: #5b564d; font-style: italic; white-space: nowrap; }
+  ul { list-style: none; margin-top: .45rem; }
+  li { position: relative; padding-left: 1.05rem; margin-bottom: .3rem; font-size: .93rem; }
+  li::before { content: "·"; position: absolute; left: .15rem; color: #8a6d3d; font-weight: 700; }
+  .refs { font-size: .83rem; margin-top: .35rem; }
+  .refs a { margin-right: 1.1rem; border-bottom: 1px solid #cfc7b8; text-decoration: none; }
+  .skills { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1.2rem; }
+  .skills dt { font-weight: 600; font-size: .9rem; }
+  .skills dd { color: #5b564d; font-size: .9rem; }
+
+  @media print {
+    body { background: #fff; font-size: 10.5px; }
+    nav, .dl { display: none; }
+    .wrap { padding: 0; max-width: none; }
+    h2 { margin-top: 1.2rem; }
+  }
+</style>

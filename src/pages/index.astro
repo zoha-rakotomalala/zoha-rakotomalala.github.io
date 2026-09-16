@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+import Scene from "../components/Scene.astro";
+import { hero, scenes, contact } from "../data/scenes";
+---
+
+<Base title="Zoha Rakotomalala">
+  <section class="scene" id="hero" data-sky={hero.sky.join(",")}>
+    <div class="inner">
+      <div class="kicker fx">{hero.kicker}</div>
+      <h1 class="serif fx d1">{hero.name[0]}<br />{hero.name[1]}</h1>
+      <p class="sub fx d2">{hero.sub}</p>
+    </div>
+    <div class="cue">Scroll</div>
+  </section>
+
+  {scenes.map((scene) => <Scene scene={scene} />)}
+
+  <section class="scene dark" id={contact.id} data-sky={contact.sky.join(",")} style="min-height:72svh">
+    <div class="inner">
+      <h2 class="serif fx">{contact.title}</h2>
+      <p class="body fx d1">{contact.body}</p>
+      <div class="links fx d2">
+        {contact.links.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0e0f14">
+    <div class="fin">Zoha Rakotomalala · Paris · 2026</div>
+  </footer>
+</Base>

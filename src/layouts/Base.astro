@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "Zoha Rakotomalala. Software engineer in Paris. A career told in changing light." } = Astro.props;
+
+// GoatCounter analytics (goatcounter.com, account code "zoharak").
+// Clear the string to disable analytics entirely.
+const GOATCOUNTER_CODE = "zoharak";
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Zoha Rakotomalala",
+  jobTitle: "Software Development Engineer",
+  worksFor: { "@type": "Organization", name: "Amazon" },
+  address: { "@type": "PostalAddress", addressLocality: "Paris", addressCountry: "FR" },
+  url: "https://zoha-rakotomalala.github.io",
+  email: "mailto:zoha.rakotomalala@gmail.com",
+  sameAs: [
+    "https://github.com/zoha-rakotomalala",
+    "https://www.linkedin.com/in/ZohaRak",
+  ],
+});
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zoha-rakotomalala.github.io/" />
+    <meta property="og:image" content="https://zoha-rakotomalala.github.io/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://zoha-rakotomalala.github.io/og.png" />
+    <script type="application/ld+json" set:html={jsonLd} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="sky"></div>
+    <div id="grain"></div>
+
+    <nav class="top">
+      <div class="nm">Zoha Rakotomalala</div>
+      <div class="lk">
+        <a href="mailto:zoha.rakotomalala@gmail.com">Email</a>
+        <a href="https://github.com/zoha-rakotomalala">GitHub</a>
+        <a href="https://www.linkedin.com/in/ZohaRak">LinkedIn</a>
+        <a href="/cv">CV</a>
+      </div>
+    </nav>
+
+    <slot />
+
+    <script>
+      import { initSky } from "../scripts/sky";
+      initSky();
+    </script>
+
+    {
+      GOATCOUNTER_CODE && (
+        <script
+          data-goatcounter={`https://${GOATCOUNTER_CODE}.goatcounter.com/count`}
+          async
+          is:inline
+          src="https://gc.zgo.at/count.js"
+        />
+      )
+    }
+  </body>
+</html>
