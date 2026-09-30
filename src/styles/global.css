@@ -83,6 +83,7 @@ nav.top .lk a:hover { border-bottom-color: #fff; }
 /* ---- images (framed the Palette way: dark, gold-edged, glowing) ---- */
 .figures { display: flex; gap: 2rem; margin-top: 2.4rem; flex-wrap: wrap; }
 .figures figure { max-width: 16rem; flex: 1 1 12rem; }
+.figures figure.wide { max-width: 100%; flex: 1 1 100%; }
 .figures img {
   width: 100%; height: auto; display: block; border-radius: 10px;
   border: 1px solid rgba(229, 201, 138, .35);
