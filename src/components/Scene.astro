@@ -27,7 +27,7 @@ const paras = s.body ? (Array.isArray(s.body) ? s.body : [s.body]) : [];
       s.images && (
         <div class="figures fx d3">
           {s.images.map((img) => (
-            <figure>
+            <figure class:list={{ wide: img.wide }}>
               <img src={img.src} alt={img.alt} loading="lazy" />
               {img.caption && <figcaption>{img.caption}</figcaption>}
             </figure>

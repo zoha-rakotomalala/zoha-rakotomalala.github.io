@@ -30,6 +30,7 @@ export interface SceneImage {
   src: string; // "/images/example.jpg" (file in public/images/)
   alt: string; // description for accessibility
   caption?: string; // optional museum-style label under the image
+  wide?: boolean; // true = the figure takes the full row (landscape images)
 }
 
 export interface SpectrumItem {
@@ -197,6 +198,35 @@ export const scenes: Scene[] = [
     links: [
       { label: "Visit Palette", href: "https://zoha-rakotomalala.github.io/Mithra/" },
       { label: "Repository", href: "https://github.com/zoha-rakotomalala/Mithra" },
+    ],
+  },
+  {
+    id: "wall",
+    sky: ["#13241f", "#0c1915"],
+    dark: true,
+    kicker: "2026 · a spare screen on my desk",
+    title: ["Night", "light."],
+    wall: "Python · open museum APIs · colour matching · Spotify",
+    body: [
+      "heure bleue is a gallery wall for a spare screen. One painting at a time, from the Met, the Rijksmuseum and the Musée d'Orsay, chosen to match the colours of the album cover playing in Spotify. A clock, the weather, the sunset countdown. Nothing from work.",
+      "It keeps what I heart and slowly learns my taste. Everything runs on the machine itself: no accounts, no keys. A web demo shows the wall without the music.",
+    ],
+    images: [
+      {
+        src: "/images/heure-bleue-portrait.gif",
+        alt: "heure bleue on a portrait screen: four songs, four paintings in the covers' colours",
+        caption: "Portrait · four songs, four paintings",
+      },
+      {
+        src: "/images/heure-bleue-landscape.gif",
+        alt: "heure bleue on a landscape screen: clock and music on the left, the painting on the right",
+        caption: "Landscape · the same wall, wide",
+        wide: true,
+      },
+    ],
+    links: [
+      { label: "Web demo", href: "https://zoha-rakotomalala.github.io/heure-bleue/" },
+      { label: "Repository", href: "https://github.com/zoha-rakotomalala/heure-bleue" },
     ],
   },
   {
