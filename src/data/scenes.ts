@@ -14,6 +14,12 @@ export interface SceneLink {
   href: string;
 }
 
+export interface SceneDownload {
+  label: string; // the system, e.g. "Mac"
+  detail?: string; // small text after it, e.g. "Apple silicon"
+  href: string; // a stable link that always gives the newest file
+}
+
 export interface SceneStat {
   value: number | string; // number = animated count-up; string (e.g. "$1B+") = static
   prefix?: string; // e.g. "$" (count-up stats only)
@@ -49,6 +55,7 @@ export interface Scene {
   wall?: string; // the small-caps "wall label" under the title
   body?: string | string[]; // one paragraph, or several; <b>...</b> allowed for emphasis
   links?: SceneLink[];
+  downloads?: SceneDownload[]; // one button per system, rendered above the links
   stats?: SceneStat[];
   images?: SceneImage[];
   quotes?: SceneQuote[]; // verbatim pull-quotes, rendered small italic serif
@@ -209,7 +216,13 @@ export const scenes: Scene[] = [
     wall: "Python · open museum APIs · colour matching · Spotify",
     body: [
       "heure bleue is a gallery wall for a spare screen. One painting at a time, from the Met, the Rijksmuseum and the Musée d'Orsay, chosen to match the colours of the album cover playing in Spotify. A clock, the weather, the sunset countdown. Nothing from work.",
-      "It keeps what I heart and slowly learns my taste. Everything runs on the machine itself: no accounts, no keys. A web demo shows the wall without the music.",
+      "It keeps what I heart and slowly learns my taste. Everything runs on the machine itself: no accounts, no keys. A web demo shows the wall without the music; the app is free, for Mac, Windows and Linux, and updates itself.",
+    ],
+    downloads: [
+      { label: "Mac", detail: "Apple silicon", href: "https://zoha-rakotomalala.github.io/heure-bleue/get/?os=mac-arm64" },
+      { label: "Mac", detail: "Intel", href: "https://zoha-rakotomalala.github.io/heure-bleue/get/?os=mac-intel" },
+      { label: "Windows", href: "https://zoha-rakotomalala.github.io/heure-bleue/get/?os=windows" },
+      { label: "Linux", href: "https://zoha-rakotomalala.github.io/heure-bleue/get/?os=linux" },
     ],
     images: [
       {
