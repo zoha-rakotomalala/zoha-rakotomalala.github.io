@@ -120,6 +120,7 @@ export const scenes: Scene[] = [
     sky: ["#c2cdd2", "#a9b8bf"],
     kicker: "2024 to 2025 · Amazon, Amsterdam",
     title: ["Clair-", "obscur."],
+    titleHtml: "Clair-<em>obscur.</em>",
     wall: "Price Perception · architecture · European Omnibus directive",
     body: [
       "At Amazon in Amsterdam I worked on Price Perception: how customers see prices. I designed the <b>architecture for a new price-history experience</b>, weighing real-time computation against pre-computed approaches.",
