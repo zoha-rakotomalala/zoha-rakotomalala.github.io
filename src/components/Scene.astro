@@ -95,6 +95,20 @@ const paras = s.body ? (Array.isArray(s.body) ? s.body : [s.body]) : [];
     }
 
     {
+      s.downloads && (
+        <div class="downloads fx d3">
+          <span class="dl-k">Download the app</span>
+          {s.downloads.map((d) => (
+            <a href={d.href}>
+              ↓ {d.label}
+              {d.detail && <small>{d.detail}</small>}
+            </a>
+          ))}
+        </div>
+      )
+    }
+
+    {
       s.links && (
         <div class="links fx d3">
           {s.links.map((l) => (
