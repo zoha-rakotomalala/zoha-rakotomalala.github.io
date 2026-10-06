@@ -37,6 +37,8 @@ export interface SceneImage {
   alt: string; // description for accessibility
   caption?: string; // optional museum-style label under the image
   wide?: boolean; // true = the figure takes the full row (landscape images)
+  video?: string; // "/images/example.mp4": a silent looping clip; src is then its poster
+  height?: number; // rem; figures with the same height sit side by side at one height
 }
 
 export interface SpectrumItem {
@@ -226,15 +228,18 @@ export const scenes: Scene[] = [
     ],
     images: [
       {
-        src: "/images/heure-bleue-portrait.gif",
-        alt: "heure bleue on a portrait screen: four songs, four paintings in the covers' colours",
-        caption: "Portrait · four songs, four paintings",
+        src: "/images/heure-bleue-portrait.jpg",
+        video: "/images/heure-bleue-portrait.mp4",
+        alt: "heure bleue on a portrait screen: one painting after another, each in the colours of the song playing",
+        caption: "Portrait · seven minutes, eight songs",
+        height: 19,
       },
       {
-        src: "/images/heure-bleue-landscape.gif",
+        src: "/images/heure-bleue-landscape.jpg",
+        video: "/images/heure-bleue-landscape.mp4",
         alt: "heure bleue on a landscape screen: clock and music on the left, the painting on the right",
         caption: "Landscape · the same wall, wide",
-        wide: true,
+        height: 19,
       },
     ],
     links: [

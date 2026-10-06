@@ -96,7 +96,10 @@ nav.top .lk a:hover { border-bottom-color: #fff; }
 .figures { display: flex; gap: 2rem; margin-top: 2.4rem; flex-wrap: wrap; }
 .figures figure { max-width: 16rem; flex: 1 1 12rem; }
 .figures figure.wide { max-width: 100%; flex: 1 1 100%; }
-.figures img {
+.figures figure.fixed { flex: 0 0 auto; max-width: 100%; }
+.figures figure.fixed img, .figures figure.fixed video { height: var(--fig-h); width: auto; max-width: 100%; }
+@media (max-width: 640px) { .figures figure.fixed img, .figures figure.fixed video { height: auto; width: 100%; } }
+.figures img, .figures video {
   width: 100%; height: auto; display: block; border-radius: 10px;
   border: 1px solid rgba(229, 201, 138, .35);
   box-shadow: 0 16px 48px rgba(0, 0, 0, .55), 0 0 32px rgba(229, 201, 138, .08);

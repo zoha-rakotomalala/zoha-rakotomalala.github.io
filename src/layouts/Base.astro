@@ -63,6 +63,10 @@ const jsonLd = JSON.stringify({
     <script>
       import { initSky } from "../scripts/sky";
       initSky();
+      // a looping clip is motion: stop it on the poster frame for visitors who asked for less
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.querySelectorAll<HTMLVideoElement>(".figures video").forEach((v) => { v.removeAttribute("autoplay"); v.pause(); });
+      }
     </script>
 
     {

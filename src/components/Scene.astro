@@ -27,8 +27,12 @@ const paras = s.body ? (Array.isArray(s.body) ? s.body : [s.body]) : [];
       s.images && (
         <div class="figures fx d3">
           {s.images.map((img) => (
-            <figure class:list={{ wide: img.wide }}>
-              <img src={img.src} alt={img.alt} loading="lazy" />
+            <figure class:list={{ wide: img.wide, fixed: !!img.height }} style={img.height ? `--fig-h: ${img.height}rem` : undefined}>
+              {img.video ? (
+                <video src={img.video} poster={img.src} autoplay muted loop playsinline preload="metadata" aria-label={img.alt} />
+              ) : (
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              )}
               {img.caption && <figcaption>{img.caption}</figcaption>}
             </figure>
           ))}
